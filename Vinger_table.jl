@@ -44,6 +44,6 @@ function vigenere_cipher(plaintext, keyword)
 end
 
 plaintext = "криптография серьезная наука"
-keyword = "математика"
+keyword = "информатика"
 ciphertext = vigenere_cipher(plaintext, keyword)
 println(ciphertext)
