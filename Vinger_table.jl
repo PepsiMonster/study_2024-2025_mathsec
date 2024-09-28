@@ -43,7 +43,7 @@ function vigenere_cipher(plaintext, keyword)
     return join(ciphertext)
 end
 
-plaintext = "криптография серьезная наука"
-keyword = "информатика"
+plaintext = "криптография важная наука"
+keyword = "математика"
 ciphertext = vigenere_cipher(plaintext, keyword)
 println(ciphertext)
