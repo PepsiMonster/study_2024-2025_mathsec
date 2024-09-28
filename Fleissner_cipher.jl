@@ -77,6 +77,6 @@ function fleissner_cipher(plaintext, password)
 end
 
 plaintext = "договор подписали"
-password = "шифр"
+password = "котэ"
 ciphertext = fleissner_cipher(plaintext, password)
 println(ciphertext)
