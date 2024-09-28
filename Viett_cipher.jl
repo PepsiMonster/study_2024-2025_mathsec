@@ -1,52 +1,50 @@
 function route_cipher(text, m, n, keyword)
-    # Remove spaces and convert to lowercase
+    # Для удобства в начале убираем пробелы и делаем буквы маленькими
     text = replace(text, r"\s"=>"")
     text = lowercase(text)
     
-    # Convert text to an array of characters
+    # перекидываем буквы в новую переменную
     text_chars = collect(text)
     
-    block_length = m * n
+    block_length = m * n #наш блок m*n
     
-    # Break text_chars into blocks
+    # новую переменную из букв раскидываем по блоку
     blocks = [text_chars[i:min(i+block_length-1, end)] for i in 1:block_length:length(text_chars)]
     
-    # Pad the last block if necessary with arbitrary letters (e.g., 'я')
+    # Вот этот кусок для дополнительных букв, если наш комок букв не раскидывается ровно 
     if length(blocks[end]) < block_length
         padding_length = block_length - length(blocks[end])
         blocks[end] = vcat(blocks[end], ['я' for _ in 1:padding_length])
     end
     
-    # Map keyword letters to positions in the Russian alphabet
+    # Привязывает буквы ПАРОЛЯ к их номеру в русском алфавите
     function letter_position(letter)
         code = Int(letter)
-        position = code - 1071  # 'а' is Unicode 1072
+        position = code - 1071 
         return position
     end
     
     keyword_chars = collect(keyword)
     keyword_positions = [letter_position(c) for c in keyword_chars]
     
-    # Get sorted order of the columns based on keyword letters
+    #Сортирует буквы (колонны соответсвенно будут дальше) по паролю в порядке возрастания их номера по алфавиту
     sorted_positions = sortperm(keyword_positions)
     column_order = sorted_positions
-    
-    # Initialize cipher text
     cipher_text = ""
     
-    # Process each block
+    # Супер цикл для каждого блока
     for block in blocks
-        # Create m x n matrix and fill it row by row
+        # Создаем матрицу m*n наполненную нашими буквами (undef - чтобы буквы, а не цифры)
         mat = Array{Char}(undef, m, n)
         index = 1
         for i in 1:m
             for j in 1:n
-                mat[i, j] = block[index]
-                index += 1
+                mat[i, j] = block[index] #по порядку для каждой буквы проверяем ее индекс, смотрим по строке и столбцу
+                index += 1               #и по итогу у нас новые буквы
             end
         end
     
-        # Read columns in the order defined by the keyword
+        # Перемешиваем колонны в порядлке возрастания индекса букв в пароле
         for col in column_order
             for row in 1:m
                 cipher_text *= mat[row, col]
@@ -57,10 +55,9 @@ function route_cipher(text, m, n, keyword)
     return cipher_text
 end
 
-# Example usage:
 text = "нельзя недооценивать противника"
-m = 5
-n = 6
-keyword = "пароль"
+m = 5 #нельзя сделать меньше 5х6, потому что 30 букв
+n = 6 #если поменять кол-во букв, можно поиграть с размером матрицы, главное чтобы буквы ПОМЕЩАЛИСЬ
+keyword = "пароль" #должно соответствовать нашему n
 cipher_text = route_cipher(text, m, n, keyword)
 println(cipher_text)

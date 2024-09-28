@@ -1,23 +1,22 @@
 function fleissner_cipher(plaintext, password)
-    # Remove spaces and convert to lowercase
+    # Для удобства в начале сразу убираем пробелы и делаем текст маленькими буквами
     plaintext = replace(plaintext, r"\s"=>"")
     plaintext = lowercase(plaintext)
     
-    # Remove non-letter characters
+    # Тоже косметическое, убираем не-буквы
     plaintext = replace(plaintext, r"[^а-яё]" => "")
     password = lowercase(password)
     password = replace(password, r"[^а-яё]" => "")
-    
-    N = 4  # Grid size fixed at 4 for simplicity
 
-    # Check password length and uniqueness
+    # Смотрим, чтобы длина пароля была не меньше нашего квадарата
+    N = 4  
     if length(password) < N
-        error("Password length must be at least N (which is 4).")
+        error("Password length must be at least N (which is 4).") # Что-то на подобии try/except в питоне
     elseif length(password) > N
-        password = password[1:N]  # Truncate to length N
+        password = password[1:N]  #если она больше, "обрезаем" слово до N
     end
 
-    # Ensure password letters are unique
+    # Проверяем, чтобы буквы пароля были уникальными, иначе будут ошибки, ошибки, ошибки
     if length(unique(collect(password))) != N
         error("The password must contain unique letters of length N.")
     end
