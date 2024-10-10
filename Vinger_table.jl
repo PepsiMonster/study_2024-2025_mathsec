@@ -47,3 +47,4 @@ plaintext = "криптография крутая наука"
 keyword = "математика"
 ciphertext = vigenere_cipher(plaintext, keyword)
 println(ciphertext)
+# Вот и сказочке конец
