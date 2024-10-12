@@ -18,7 +18,7 @@ function encrypt(plaintext::String, key::String)
     key = filter(c -> c in russian_letters, uppercase(key))
     
     
-    plaintext_nums = [letter_to_num[c] for c in plaintext] # Сопосталяем буквам строчки число
+    plaintext_nums = [letter_to_num[c] for c in plaintext] # Сопосталяем буквам сообщению число
     key_nums = [letter_to_num[c] for c in key] #сопоставляем буквам ключа число
     
     
@@ -35,7 +35,7 @@ end
 
 
 # Пример
-plaintext = "ПРИКАЗ"
+plaintext = "ПРИВЕТ КАК ДЕЛА"
 key = "ГАММА"
 
 ciphertext = encrypt(plaintext, key)
