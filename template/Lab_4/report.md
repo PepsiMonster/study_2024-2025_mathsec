@@ -189,7 +189,7 @@ $$
 
 4. **Основной цикл**:
     $$
-    \begin{aligned}
+    \begin{align*}
     &\text{- Пока } u \neq v, \text{ выполняем следующие действия:} \\
     &\quad \text{- Шаг 4.1: Если } u \text{ четное, то:} \\
     &\quad\quad \text{4.1.1 Если } u \text{ четное, делим его на 2:} \\
@@ -241,7 +241,7 @@ $$
 - Если остаток равен нулю, то текущее меньшее число является НОД.
 
 **Пример кода:** 
-julia
+```julia
 a = 4567890
 b = 462
 
@@ -262,7 +262,7 @@ function euclidian_algorithm(a,b)
 end
 
 println(euclidian_algorithm(a,b))
-
+```
 
     6
 
@@ -274,7 +274,7 @@ println(euclidian_algorithm(a,b))
 3. Если оба нечётные, из большего вычитаем меньшее, делим результат на 2 и повторяем.
 
 **Пример кода:** 
-julia
+```julia
 a = 678908890
 b = 2937
 
@@ -308,7 +308,7 @@ function euclidian_binary(a,b)
 end
 
 println(euclidian_binary(a,b))
-
+```
 
     11
 
@@ -317,7 +317,7 @@ println(euclidian_binary(a,b))
 В расширенном алгоритме Евклида на каждом шаге вычисления остатка также обновляются коэффициенты \( x \) и \( y \) для линейной комбинации. Процесс продолжается до тех пор, пока один из остатков не станет нулём. На этом этапе значения \( x \) и \( y \) дают линейное представление НОД.
 
 **Пример кода:** 
-julia
+```julia
 a = 3984759347
 b = 47584
 
@@ -351,21 +351,20 @@ function euclidian_ext(a,b)
     return d, x, y
 end
 println(euclidian_ext(a,b))
-
+```
 
     (1, 18011, -1508269599)
     
 
 **Проверка**
-
-
-julia
+```julia
 d, x, y = euclidian_ext(a,b)
 check = a*x+b*y
 println(check)
 
 
     1
+```
 
 ### Реализация расширенного бинарного алгоритма Евклида
 
@@ -376,7 +375,7 @@ println(check)
 
 **Пример кода:** 
 
-julia
+```julia
 a = 1024
 b = 512
 
@@ -436,16 +435,14 @@ println(euclidean_ext_bin(a,b))
 
 
     (512, 0, 1)
-    
+```    
 
 **Проверка**
-
-
-julia
+```julia
 d, x, y = euclidean_ext_bin(a,b)
 check = a*x+b*y 
 println(check)
-
+```
 
     512
 

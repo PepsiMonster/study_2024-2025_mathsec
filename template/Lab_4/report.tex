@@ -1,0 +1,718 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Документ},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Документ}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Цель
+работы}\label{ux446ux435ux43bux44c-ux440ux430ux431ux43eux442ux44b}
+
+Цель данной лабораторной работы --- изучить различные алгоритмы для
+вычисления наибольшего общего делителя (НОД) двух целых чисел, а также
+освоить их программную реализацию на языке Julia . В рамках лабораторной
+работы необходимо реализовать алгоритм Евклида, бинарный алгоритм
+Евклида, расширенный алгоритм Евклида, а также расширенный бинарный
+алгоритм Евклида.
+
+\section{Задание}\label{ux437ux430ux434ux430ux43dux438ux435}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Реализовать алгоритм Евклида для нахождения наибольшего общего
+  делителя.}
+\item
+  \textbf{Реализовать бинарный алгоритм Евклида.}
+\item
+  \textbf{Реализовать расширенный алгоритм Евклида.}
+\item
+  \textbf{Реализовать расширенный бинарный алгоритм Евклида.}
+\end{enumerate}
+
+\section{Теоретическое
+введение}\label{ux442ux435ux43eux440ux435ux442ux438ux447ux435ux441ux43aux43eux435-ux432ux432ux435ux434ux435ux43dux438ux435}
+
+\subsubsection{Определение наибольшего общего
+делителя}\label{ux43eux43fux440ux435ux434ux435ux43bux435ux43dux438ux435-ux43dux430ux438ux431ux43eux43bux44cux448ux435ux433ux43e-ux43eux431ux449ux435ux433ux43e-ux434ux435ux43bux438ux442ux435ux43bux44f}
+
+Наибольший общий делитель (НОД) двух или более целых чисел --- это
+наибольшее целое число ( d ), которое делит эти числа без остатка. Если
+числа ( a\_1, a\_2, \ldots, a\_k ) имеют НОД равный ( d ), то
+выполняются следующие условия: 1. Каждое из чисел ( a\_1, a\_2, \ldots,
+a\_k ) делится на ( d ). 2. ( d ) является наибольшим числом, которое
+удовлетворяет первому условию.
+
+\[
+\text{Если НОД}(a, b) = 1 \Rightarrow \text{ числа } a \text{ и } b \text{ взаимно просты}
+\]
+
+\subsubsection{Алгоритм
+Евклида}\label{ux430ux43bux433ux43eux440ux438ux442ux43c-ux435ux432ux43aux43bux438ux434ux430}
+
+Алгоритм Евклида используется для нахождения наибольшего общего делителя
+(НОД) двух целых чисел \[
+( a ) \text{ и } ( b ), \text{ где } ( 0 < b \leq a )
+\]
+
+\paragraph{Пошаговый алгоритм
+Евклида}\label{ux43fux43eux448ux430ux433ux43eux432ux44bux439-ux430ux43bux433ux43eux440ux438ux442ux43c-ux435ux432ux43aux43bux438ux434ux430}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Инициализация}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Задаем начальные значения: \[
+    ( r_0 \leftarrow a ), ( r_1 \leftarrow b ), ( i \leftarrow 1 ).
+    \]
+  \end{itemize}
+\item
+  \textbf{Деление с остатком}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Находим остаток от деления: \[
+     r_{i-1}  \text{ на }  r_i . \text{Обозначим этот остаток как }  r_{i+1} .
+    \]
+  \end{itemize}
+\item
+  \textbf{Проверка на завершение}: \[
+  \text{Если } r_{i+1} = 0, \text{ то устанавливаем } d \gets r_i, \text{ где } d \text{ — это НОД двух чисел } a \text{ и } b.
+  \] \[
+  \text{Если } r_{i+1} \neq 0, \text{ то увеличиваем } i \text{ на 1 и повторяем шаг 2.}
+  \]
+\item
+  \textbf{Результат}: \[
+  \text{После завершения алгоритма } ( d ) \text{содержит НОД чисел} ( a ) \text{и} ( b ).
+  \]
+\end{enumerate}
+
+\subsubsection{Бинарный алгоритм Евклида (поиск наибольшего общего
+делителя)}\label{ux431ux438ux43dux430ux440ux43dux44bux439-ux430ux43bux433ux43eux440ux438ux442ux43c-ux435ux432ux43aux43bux438ux434ux430-ux43fux43eux438ux441ux43a-ux43dux430ux438ux431ux43eux43bux44cux448ux435ux433ux43e-ux43eux431ux449ux435ux433ux43e-ux434ux435ux43bux438ux442ux435ux43bux44f}
+
+Бинарный алгоритм Евклида --- это улучшенная версия классического
+алгоритма Евклида, которая быстрее выполняется на компьютерах благодаря
+использованию операций сдвига для работы с двоичными представлениями
+чисел.
+
+\paragraph{Пошаговое описание
+алгоритма}\label{ux43fux43eux448ux430ux433ux43eux432ux43eux435-ux43eux43fux438ux441ux430ux43dux438ux435-ux430ux43bux433ux43eux440ux438ux442ux43cux430}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Инициализация множителя}: \[
+  \text{Задаем} ( g \leftarrow 1 ). \text{Этот множитель} ( g ) \text{будет использоваться для хранения общего множителя 2, если оба числа  a и  b  четные}
+  \]
+\item
+  \textbf{Удаление общих множителей 2 из ( a ) и ( b )}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Пока оба числа ( a ) и ( b ) четные, делим их на 2 и умножаем ( g )
+    на 2: \[
+    a \leftarrow \frac{a}{2}, \quad b \leftarrow \frac{b}{2}, \quad g \leftarrow 2g
+    \]
+  \item
+    Этот шаг выполняется до тех пор, пока одно из чисел не станет
+    нечетным.
+  \end{itemize}
+\item
+  \textbf{Инициализация переменных для основного цикла}: \[
+  \text{Устанавливаем }  u \leftarrow a  \text{ и }  v \leftarrow b .
+  \]
+\item
+  \textbf{Основной цикл}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Пока \[ 
+    u \neq 0 \text{, выполняем следующие действия:}.
+    \]
+  \end{itemize}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Шаг 4.1}: \[
+  \text{Если  u  четное, то делим его на 2: } u\leftarrow \frac{u}{2}
+  \]
+\item
+  \textbf{Шаг 4.2}: \[
+  \text{Если \( v \) четное, то делим его на 2: } v\leftarrow \frac{v}{2}
+  \]
+\item
+  \textbf{Шаг 4.3}: \[
+  \text{Если } u \geq v , \text{то заменяем  u  на u - v ; в противном случае заменяем  v  на  v - u}.
+  \]
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Вычисление НОД}: \[
+  \text{Когда  u = 0 , устанавливаем }  d \leftarrow g \times v . \text{Это и будет НОД чисел  a и b}.
+  \]
+\item
+  \textbf{Результат}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Итоговое значение d является наибольшим общим делителем чисел a и b.
+  \end{itemize}
+\end{enumerate}
+
+Бинарный алгоритм Евклида эффективен для выполнения на компьютере,
+поскольку использует операции деления и вычитания, которые хорошо
+работают с двоичными числами, минимизируя количество арифметических
+операций.
+
+\textbf{Пример выполнения:} Пусть даны числа ( a = 12345 ) и ( b = 24690
+). В ходе выполнения алгоритма Евклида последовательно находим остатки
+от деления, пока одно из чисел не станет нулём.
+
+\subsubsection{Расширенный алгоритм
+Евклида}\label{ux440ux430ux441ux448ux438ux440ux435ux43dux43dux44bux439-ux430ux43bux433ux43eux440ux438ux442ux43c-ux435ux432ux43aux43bux438ux434ux430}
+
+Расширенный алгоритм Евклида позволяет не только найти НОД двух чисел,
+но и найти такие целые числа ( x ) и ( y ), что ( ax + by = НОД(a, b) ).
+Это уравнение называется линейной комбинацией. Расширенный алгоритм
+полезен для задач, где требуется найти коэффициенты линейной комбинации,
+например, в криптографии.
+
+\subsubsection{Расширенный бинарный алгоритм
+Евклида}\label{ux440ux430ux441ux448ux438ux440ux435ux43dux43dux44bux439-ux431ux438ux43dux430ux440ux43dux44bux439-ux430ux43bux433ux43eux440ux438ux442ux43c-ux435ux432ux43aux43bux438ux434ux430}
+
+\subsubsection{Расширенный алгоритм Евклида (поиск НОД и коэффициентов
+линейного
+представления)}\label{ux440ux430ux441ux448ux438ux440ux435ux43dux43dux44bux439-ux430ux43bux433ux43eux440ux438ux442ux43c-ux435ux432ux43aux43bux438ux434ux430-ux43fux43eux438ux441ux43a-ux43dux43eux434-ux438-ux43aux43eux44dux444ux444ux438ux446ux438ux435ux43dux442ux43eux432-ux43bux438ux43dux435ux439ux43dux43eux433ux43e-ux43fux440ux435ux434ux441ux442ux430ux432ux43bux435ux43dux438ux44f}
+
+Расширенный алгоритм Евклида не только находит наибольший общий делитель
+(НОД) чисел ( a ) и ( b ), но и определяет целые числа ( x ) и ( y )
+такие, что выполняется равенство: \[
+ax + by = d \text{ где } ( d = \text{НОД}(a, b) ).
+\]
+
+\paragraph{Пошаговое описание
+алгоритма}\label{ux43fux43eux448ux430ux433ux43eux432ux43eux435-ux43eux43fux438ux441ux430ux43dux438ux435-ux430ux43bux433ux43eux440ux438ux442ux43cux430-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Инициализация}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Задаем начальные значения: \[
+    r_0 \leftarrow a, \quad r_1 \leftarrow b, \quad x_0 \leftarrow 1, \quad x_1 \leftarrow 0, \quad y_0 \leftarrow 0, \quad y_1 \leftarrow 1, \quad i \leftarrow 1
+    \]
+  \end{itemize}
+\item
+  \textbf{Деление с остатком}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Разделяем: \[ 
+     r_{i-1}  \text{ на }  r_i  \text{ с остатком, получая: }
+     r_{i-1} = q_i \cdot r_i + r_{i+1}
+     \text{ где }  q_i  \text{ — это частное, а }  r_{i+1}  \text{ — остаток.}
+     \]
+  \end{itemize}
+\item
+  \textbf{Проверка на завершение}: \$\$ \text{- Если } r\_\{i+1\} = 0,
+  \text{ то устанавливаем:} \textbackslash{} d \leftarrow r\_i, \quad x
+  \leftarrow x\_i, \quad y \leftarrow y\_i \textbackslash{}
+\end{enumerate}
+
+\text{- Если } r\_\{i+1\} \neq 0,
+\text{ то обновляем значения коэффициентов:} \textbackslash{} x\_\{i+1\}
+\leftarrow x\_\{i-1\} - q\_i \cdot x\_i, \quad y\_\{i+1\}
+\leftarrow y\_\{i-1\} - q\_i \cdot y\_i \$\$ - Затем увеличиваем ( i )
+на 1 и возвращаемся к шагу 2.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Результат}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    После завершения алгоритма ( d ), ( x ), и ( y ) будут такими, что:
+    \[
+    ax + by = d
+    \]
+  \end{itemize}
+\end{enumerate}
+
+\subsubsection{Расширенный бинарный алгоритм
+Евклида}\label{ux440ux430ux441ux448ux438ux440ux435ux43dux43dux44bux439-ux431ux438ux43dux430ux440ux43dux44bux439-ux430ux43bux433ux43eux440ux438ux442ux43c-ux435ux432ux43aux43bux438ux434ux430-1}
+
+Расширенный бинарный алгоритм Евклида позволяет не только находить
+наибольший общий делитель (НОД) двух чисел ( a ) и ( b ), но также
+определяет коэффициенты ( x ) и ( y ) для линейного представления: \[
+ax + by = d
+\] где \[
+d = \text{НОД}(a, b) 
+\]
+
+\paragraph{Пошаговое описание
+алгоритма}\label{ux43fux43eux448ux430ux433ux43eux432ux43eux435-ux43eux43fux438ux441ux430ux43dux438ux435-ux430ux43bux433ux43eux440ux438ux442ux43cux430-2}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Инициализация множителя}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Устанавливаем ( g ⟵ 1 ). Этот множитель будет использоваться для
+    учета общего множителя 2, если оба числа ( a ) и ( b ) четные.
+  \end{itemize}
+\item
+  \textbf{Удаление общих множителей 2 из ( a ) и ( b )}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Пока оба числа ( a ) и ( b ) четные, делим их на 2 и удваиваем ( g
+    ): \[
+    a \leftarrow \frac{a}{2}, \quad b \leftarrow \frac{b}{2}, \quad g \leftarrow 2g
+    \]
+  \item
+    Этот процесс продолжается до тех пор, пока одно из чисел не станет
+    нечетным.
+  \end{itemize}
+\item
+  \textbf{Инициализация переменных для расширенного алгоритма}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Задаем начальные значения: \[
+    u \leftarrow a, \quad v \leftarrow b, \quad A \leftarrow 1, \quad B \leftarrow 0, \quad C \leftarrow 0, \quad D \leftarrow 1
+    \]
+  \end{itemize}
+\item
+  \textbf{Основной цикл}:
+
+  \textbackslash begin\{align*\} \&\text{- Пока } u \neq v,
+  \text{ выполняем следующие действия:} \textbackslash{}
+  \&\quad \text{- Шаг 4.1: Если } u \text{ четное, то:} \textbackslash{}
+  \&\quad\quad \text{4.1.1 Если } u \text{ четное, делим его на 2:}
+  \textbackslash{} \&\quad\quad u \leftarrow \frac{u}{2}
+  \textbackslash{} \&\quad\quad \text{4.1.2 Если оба числа } A
+  \text{ и } B \text{ четные, делим их на 2:} \textbackslash{}
+  \&\quad\quad A \leftarrow \frac{A}{2}, \quad B \leftarrow \frac{B}{2}
+  \textbackslash{} \&\quad\quad \text{В противном случае:}
+  \textbackslash{} \&\quad\quad A \leftarrow \frac{A + b}{2}, \quad B
+  \leftarrow \frac{B - a}{2} \textbackslash end\{aligned\}
+
+  \begin{aligned}
+   &\text{- Шаг 4.2: Если } v \text{ четное, то:} \\
+   &\quad \text{4.2.1 Если } v \text{ четное, делим его на 2:} \\
+   &\quad v \leftarrow \frac{v}{2} \\
+   &\quad \text{4.2.2 Если оба числа } C \text{ и } D \text{ четные, делим их на 2:} \\
+   &\quad C \leftarrow \frac{C}{2}, \quad D \leftarrow \frac{D}{2} \\
+   &\quad \text{В противном случае:} \\
+   &\quad C \leftarrow \frac{C + b}{2}, \quad D \leftarrow \frac{D - a}{2} \\
+
+   &\text{- Шаг 4.3: Если } u \geq v, \text{ то:} \\
+   &\quad u \leftarrow u - v, \quad A \leftarrow A - C, \quad B \leftarrow B - D \\
+   &\text{В противном случае:} \\
+   &\quad v \leftarrow v - u, \quad C \leftarrow C - A, \quad D \leftarrow D - B
+   \end{aligned}
+\item
+  \textbf{Вывод результата}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    После завершения цикла устанавливаем: \[
+    d \leftarrow g \times v, \quad x \leftarrow C, \quad y \leftarrow D
+    \]
+  \end{itemize}
+\item
+  \textbf{Результат}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Итоговое значение ( d ), ( x ), и ( y ) такое, что: \[
+    ax + by = d
+    \]
+  \end{itemize}
+\end{enumerate}
+
+\section{Выполнение лабораторной
+работы}\label{ux432ux44bux43fux43eux43bux43dux435ux43dux438ux435-ux43bux430ux431ux43eux440ux430ux442ux43eux440ux43dux43eux439-ux440ux430ux431ux43eux442ux44b}
+
+\subsubsection{Реализация алгоритма
+Евклида}\label{ux440ux435ux430ux43bux438ux437ux430ux446ux438ux44f-ux430ux43bux433ux43eux440ux438ux442ux43cux430-ux435ux432ux43aux43bux438ux434ux430}
+
+Алгоритм Евклида начинается с инициализации чисел ( r\_0 = a ) и ( r\_1
+= b ). Затем производится деление с нахождением остатка, пока остаток не
+станет равным нулю. На каждом шаге: - Делим большее число на меньшее. -
+Запоминаем остаток. - Если остаток равен нулю, то текущее меньшее число
+является НОД.
+
+\textbf{Пример кода:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{=} \FloatTok{4567890}
+\NormalTok{b }\OperatorTok{=} \FloatTok{462}
+
+\KeywordTok{function} \FunctionTok{euclidian\_algorithm}\NormalTok{(a,b)}
+    \ControlFlowTok{if}\NormalTok{ a}\OperatorTok{\textless{}}\NormalTok{b}
+\NormalTok{        a,b}\OperatorTok{=}\NormalTok{b,a}
+    \ControlFlowTok{end}
+\NormalTok{    r\_0 }\OperatorTok{=}\NormalTok{ a}
+\NormalTok{    r\_1 }\OperatorTok{=}\NormalTok{ b }
+    \ControlFlowTok{while} \ConstantTok{true}
+\NormalTok{        r\_next}\OperatorTok{=}\NormalTok{ r\_0 }\OperatorTok{\%}\NormalTok{ r\_1}
+        \ControlFlowTok{if}\NormalTok{ r\_next }\OperatorTok{==} \FloatTok{0}
+            \ControlFlowTok{return}\NormalTok{ r\_1}
+        \ControlFlowTok{end}
+\NormalTok{        r\_0 }\OperatorTok{=}\NormalTok{ r\_1}
+\NormalTok{        r\_1 }\OperatorTok{=}\NormalTok{ r\_next}
+    \ControlFlowTok{end}
+\KeywordTok{end}
+
+\FunctionTok{println}\NormalTok{(}\FunctionTok{euclidian\_algorithm}\NormalTok{(a,b))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+6
+\end{verbatim}
+
+\subsubsection{Реализация бинарного алгоритма
+Евклида}\label{ux440ux435ux430ux43bux438ux437ux430ux446ux438ux44f-ux431ux438ux43dux430ux440ux43dux43eux433ux43e-ux430ux43bux433ux43eux440ux438ux442ux43cux430-ux435ux432ux43aux43bux438ux434ux430}
+
+Бинарный алгоритм Евклида проверяет чётность обоих чисел. На каждом
+шаге: 1. Если оба числа чётные, делим их пополам и умножаем результат на
+2. 2. Если одно из чисел чётное, делим только его. 3. Если оба нечётные,
+из большего вычитаем меньшее, делим результат на 2 и повторяем.
+
+\textbf{Пример кода:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{=} \FloatTok{678908890}
+\NormalTok{b }\OperatorTok{=} \FloatTok{2937}
+
+\KeywordTok{function} \FunctionTok{euclidian\_binary}\NormalTok{(a,b)}
+    \ControlFlowTok{if}\NormalTok{ a}\OperatorTok{\textless{}}\NormalTok{b}
+\NormalTok{        a,b}\OperatorTok{=}\NormalTok{b,a}
+    \ControlFlowTok{end}
+\NormalTok{    g }\OperatorTok{=} \FloatTok{1}
+    \ControlFlowTok{while}\NormalTok{ a}\OperatorTok{\%}\FloatTok{2}\OperatorTok{==}\FloatTok{0} \OperatorTok{\&\&}\NormalTok{ b}\OperatorTok{\%}\FloatTok{2}\OperatorTok{==}\FloatTok{0}
+\NormalTok{        a }\OperatorTok{=} \FunctionTok{div}\NormalTok{(a,}\FloatTok{2}\NormalTok{)}
+\NormalTok{        b }\OperatorTok{=} \FunctionTok{div}\NormalTok{(a,}\FloatTok{2}\NormalTok{)}
+\NormalTok{        g}\OperatorTok{*=} \FloatTok{2}
+    \ControlFlowTok{end}
+\NormalTok{    u }\OperatorTok{=}\NormalTok{ a }
+\NormalTok{    v }\OperatorTok{=}\NormalTok{ b}
+    \ControlFlowTok{while}\NormalTok{ u}\OperatorTok{!=}\FloatTok{0}
+        \ControlFlowTok{while}\NormalTok{ u}\OperatorTok{\%}\FloatTok{2}\OperatorTok{==}\FloatTok{0}
+\NormalTok{            u }\OperatorTok{=} \FunctionTok{div}\NormalTok{(u,}\FloatTok{2}\NormalTok{)}
+        \ControlFlowTok{end}
+        \ControlFlowTok{while}\NormalTok{ v}\OperatorTok{\%}\FloatTok{2}\OperatorTok{==}\FloatTok{0}
+\NormalTok{            v }\OperatorTok{=} \FunctionTok{div}\NormalTok{(v,}\FloatTok{2}\NormalTok{)}
+        \ControlFlowTok{end}
+        \ControlFlowTok{if}\NormalTok{ u}\OperatorTok{\textgreater{}=}\NormalTok{v}
+\NormalTok{            u }\OperatorTok{{-}=}\NormalTok{ v }
+        \ControlFlowTok{else}
+\NormalTok{            v }\OperatorTok{{-}=}\NormalTok{ u}
+        \ControlFlowTok{end} 
+    \ControlFlowTok{end}
+\NormalTok{    d }\OperatorTok{=}\NormalTok{ g}\OperatorTok{*}\NormalTok{v}
+    \ControlFlowTok{return}\NormalTok{ d}
+\KeywordTok{end}
+
+\FunctionTok{println}\NormalTok{(}\FunctionTok{euclidian\_binary}\NormalTok{(a,b))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+11
+\end{verbatim}
+
+\subsubsection{Реализация расширенного алгоритма
+Евклида}\label{ux440ux435ux430ux43bux438ux437ux430ux446ux438ux44f-ux440ux430ux441ux448ux438ux440ux435ux43dux43dux43eux433ux43e-ux430ux43bux433ux43eux440ux438ux442ux43cux430-ux435ux432ux43aux43bux438ux434ux430}
+
+В расширенном алгоритме Евклида на каждом шаге вычисления остатка также
+обновляются коэффициенты ( x ) и ( y ) для линейной комбинации. Процесс
+продолжается до тех пор, пока один из остатков не станет нулём. На этом
+этапе значения ( x ) и ( y ) дают линейное представление НОД.
+
+\textbf{Пример кода:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{=} \FloatTok{3984759347}
+\NormalTok{b }\OperatorTok{=} \FloatTok{47584}
+
+\KeywordTok{function} \FunctionTok{euclidian\_ext}\NormalTok{(a,b)}
+    \ControlFlowTok{if}\NormalTok{ a}\OperatorTok{\textless{}}\NormalTok{b}
+\NormalTok{        a,b}\OperatorTok{=}\NormalTok{b,a}
+    \ControlFlowTok{end}
+\NormalTok{    r\_0 }\OperatorTok{=}\NormalTok{ a}
+\NormalTok{    r\_1 }\OperatorTok{=}\NormalTok{ b}
+\NormalTok{    x\_0}\OperatorTok{=}\FloatTok{1} \CommentTok{\# a*x + b*y = d (НОД(a,b))}
+\NormalTok{    x\_1}\OperatorTok{=}\FloatTok{0} 
+\NormalTok{    y\_0}\OperatorTok{=}\FloatTok{0}
+\NormalTok{    y\_1}\OperatorTok{=}\FloatTok{1}
+    \ControlFlowTok{while}\NormalTok{ r\_1}\OperatorTok{!=}\FloatTok{0}
+\NormalTok{        q }\OperatorTok{=} \FunctionTok{div}\NormalTok{(r\_0,r\_1)}
+\NormalTok{        r\_next }\OperatorTok{=}\NormalTok{ r\_0 }\OperatorTok{{-}}\NormalTok{ q}\OperatorTok{*}\NormalTok{r\_1 }\CommentTok{\# НОД(r\_0,r\_1)}
+\NormalTok{        r\_0 }\OperatorTok{=}\NormalTok{ r\_1}
+\NormalTok{        r\_1 }\OperatorTok{=}\NormalTok{ r\_next}
+
+\NormalTok{        x\_next }\OperatorTok{=}\NormalTok{ x\_0 }\OperatorTok{{-}}\NormalTok{ q}\OperatorTok{*}\NormalTok{x\_1}
+\NormalTok{        x\_0 }\OperatorTok{=}\NormalTok{ x\_1}
+\NormalTok{        x\_1 }\OperatorTok{=}\NormalTok{ x\_next}
+
+\NormalTok{        y\_next }\OperatorTok{=}\NormalTok{ y\_0}\OperatorTok{{-}}\NormalTok{q}\OperatorTok{*}\NormalTok{y\_1}
+\NormalTok{        y\_0 }\OperatorTok{=}\NormalTok{ y\_1}
+\NormalTok{        y\_1 }\OperatorTok{=}\NormalTok{ y\_next}
+    \ControlFlowTok{end} 
+\NormalTok{    d }\OperatorTok{=}\NormalTok{ r\_0}
+\NormalTok{    x }\OperatorTok{=}\NormalTok{ x\_0}
+\NormalTok{    y }\OperatorTok{=}\NormalTok{ y\_0}
+    \ControlFlowTok{return}\NormalTok{ d, x, y}
+\KeywordTok{end}
+\FunctionTok{println}\NormalTok{(}\FunctionTok{euclidian\_ext}\NormalTok{(a,b))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+(1, 18011, -1508269599)
+\end{verbatim}
+
+\textbf{Проверка}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d, x, y }\OperatorTok{=} \FunctionTok{euclidian\_ext}\NormalTok{(a,b)}
+\NormalTok{check }\OperatorTok{=}\NormalTok{ a}\OperatorTok{*}\NormalTok{x}\OperatorTok{+}\NormalTok{b}\OperatorTok{*}\NormalTok{y}
+\FunctionTok{println}\NormalTok{(check)}
+
+
+    \FloatTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Реализация расширенного бинарного алгоритма
+Евклида}\label{ux440ux435ux430ux43bux438ux437ux430ux446ux438ux44f-ux440ux430ux441ux448ux438ux440ux435ux43dux43dux43eux433ux43e-ux431ux438ux43dux430ux440ux43dux43eux433ux43e-ux430ux43bux433ux43eux440ux438ux442ux43cux430-ux435ux432ux43aux43bux438ux434ux430}
+
+В расширенном бинарном алгоритме Евклида используется тот же процесс,
+что и в бинарном алгоритме, но также включены вычисления для
+коэффициентов линейной комбинации. Алгоритм проходит следующие шаги: 1.
+Инициализируем коэффициенты и выполняем деление пополам, если числа
+чётные. 2. На каждом шаге вычисления коэффициентов учитываются изменения
+в значениях чисел. 3. Процесс продолжается до тех пор, пока одно из
+чисел не станет равным нулю.
+
+\textbf{Пример кода:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{=} \FloatTok{1024}
+\NormalTok{b }\OperatorTok{=} \FloatTok{512}
+
+\KeywordTok{function} \FunctionTok{euclidean\_ext\_bin}\NormalTok{(a, b)}
+    \ControlFlowTok{if}\NormalTok{ a }\OperatorTok{\textless{}}\NormalTok{ b}
+\NormalTok{        a, b }\OperatorTok{=}\NormalTok{ b, a}
+    \ControlFlowTok{end}
+\NormalTok{    g }\OperatorTok{=} \FloatTok{1}
+    \ControlFlowTok{while}\NormalTok{ a }\OperatorTok{\%} \FloatTok{2} \OperatorTok{==} \FloatTok{0} \OperatorTok{\&\&}\NormalTok{ b }\OperatorTok{\%} \FloatTok{2} \OperatorTok{==} \FloatTok{0}
+\NormalTok{        a }\OperatorTok{=} \FunctionTok{div}\NormalTok{(a, }\FloatTok{2}\NormalTok{)}
+\NormalTok{        b }\OperatorTok{=} \FunctionTok{div}\NormalTok{(b, }\FloatTok{2}\NormalTok{)}
+\NormalTok{        g }\OperatorTok{*=} \FloatTok{2}
+    \ControlFlowTok{end}
+\NormalTok{    u }\OperatorTok{=}\NormalTok{ a}
+\NormalTok{    v }\OperatorTok{=}\NormalTok{ b}
+\NormalTok{    A }\OperatorTok{=} \FloatTok{1}
+\NormalTok{    B }\OperatorTok{=} \FloatTok{0}
+\NormalTok{    C }\OperatorTok{=} \FloatTok{0}
+\NormalTok{    D }\OperatorTok{=} \FloatTok{1}
+    \ControlFlowTok{while}\NormalTok{ u }\OperatorTok{!=} \FloatTok{0}
+        \ControlFlowTok{while}\NormalTok{ u }\OperatorTok{\%} \FloatTok{2} \OperatorTok{==} \FloatTok{0}
+\NormalTok{            u }\OperatorTok{=} \FunctionTok{div}\NormalTok{(u, }\FloatTok{2}\NormalTok{)}
+            \ControlFlowTok{if}\NormalTok{ A }\OperatorTok{\%} \FloatTok{2} \OperatorTok{==} \FloatTok{0} \OperatorTok{\&\&}\NormalTok{ B }\OperatorTok{\%} \FloatTok{2} \OperatorTok{==} \FloatTok{0}
+\NormalTok{                A }\OperatorTok{=} \FunctionTok{div}\NormalTok{(A, }\FloatTok{2}\NormalTok{)}
+\NormalTok{                B }\OperatorTok{=} \FunctionTok{div}\NormalTok{(B, }\FloatTok{2}\NormalTok{)}
+            \ControlFlowTok{else}
+\NormalTok{                A }\OperatorTok{=} \FunctionTok{div}\NormalTok{(A }\OperatorTok{+}\NormalTok{ b, }\FloatTok{2}\NormalTok{)}
+\NormalTok{                B }\OperatorTok{=} \FunctionTok{div}\NormalTok{(B }\OperatorTok{{-}}\NormalTok{ a, }\FloatTok{2}\NormalTok{)}
+            \ControlFlowTok{end}
+        \ControlFlowTok{end}
+        \ControlFlowTok{while}\NormalTok{ v }\OperatorTok{\%} \FloatTok{2} \OperatorTok{==} \FloatTok{0}
+\NormalTok{            v }\OperatorTok{=} \FunctionTok{div}\NormalTok{(v, }\FloatTok{2}\NormalTok{)}
+            \ControlFlowTok{if}\NormalTok{ C }\OperatorTok{\%} \FloatTok{2} \OperatorTok{==} \FloatTok{0} \OperatorTok{\&\&}\NormalTok{ D }\OperatorTok{\%} \FloatTok{2} \OperatorTok{==} \FloatTok{0}
+\NormalTok{                C }\OperatorTok{=} \FunctionTok{div}\NormalTok{(C, }\FloatTok{2}\NormalTok{)}
+\NormalTok{                D }\OperatorTok{=} \FunctionTok{div}\NormalTok{(D, }\FloatTok{2}\NormalTok{)}
+            \ControlFlowTok{else}
+\NormalTok{                C }\OperatorTok{=} \FunctionTok{div}\NormalTok{(C }\OperatorTok{+}\NormalTok{ b, }\FloatTok{2}\NormalTok{)}
+\NormalTok{                D }\OperatorTok{=} \FunctionTok{div}\NormalTok{(D }\OperatorTok{{-}}\NormalTok{ a, }\FloatTok{2}\NormalTok{)}
+            \ControlFlowTok{end}
+        \ControlFlowTok{end}
+        \ControlFlowTok{if}\NormalTok{ u }\OperatorTok{\textgreater{}=}\NormalTok{ v}
+\NormalTok{            u }\OperatorTok{{-}=}\NormalTok{ v}
+\NormalTok{            A }\OperatorTok{{-}=}\NormalTok{ C}
+\NormalTok{            B }\OperatorTok{{-}=}\NormalTok{ D}
+        \ControlFlowTok{else}
+\NormalTok{            v }\OperatorTok{{-}=}\NormalTok{ u}
+\NormalTok{            C }\OperatorTok{{-}=}\NormalTok{ A}
+\NormalTok{            D }\OperatorTok{{-}=}\NormalTok{ B}
+        \ControlFlowTok{end}
+    \ControlFlowTok{end}
+\NormalTok{    d }\OperatorTok{=}\NormalTok{ g }\OperatorTok{*}\NormalTok{ v}
+\NormalTok{    x }\OperatorTok{=}\NormalTok{ C}
+\NormalTok{    y }\OperatorTok{=}\NormalTok{ D}
+    \ControlFlowTok{return}\NormalTok{ d, x, y}
+\KeywordTok{end}
+\FunctionTok{println}\NormalTok{(}\FunctionTok{euclidean\_ext\_bin}\NormalTok{(a,b))}
+
+
+\NormalTok{    (}\FloatTok{512}\NormalTok{, }\FloatTok{0}\NormalTok{, }\FloatTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Проверка}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d, x, y }\OperatorTok{=} \FunctionTok{euclidean\_ext\_bin}\NormalTok{(a,b)}
+\NormalTok{check }\OperatorTok{=}\NormalTok{ a}\OperatorTok{*}\NormalTok{x}\OperatorTok{+}\NormalTok{b}\OperatorTok{*}\NormalTok{y }
+\FunctionTok{println}\NormalTok{(check)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+512
+\end{verbatim}
+
+\section{Выводы}\label{ux432ux44bux432ux43eux434ux44b}
+
+В ходе выполнения лабораторной работы были изучены и реализованы 4
+вариации \emph{Алгоритма Евклида} для нахождения НОД, включая их
+расширенные версии. Каждый из алгоритмов имеет свои преимущества и
+применяется в зависимости от требований к вычислительной эффективности
+или необходимости в нахождении коэффициентов линейной комбинации.
+Бинарный алгоритм показал себя как более быстрый для реализации на
+компьютере, в то время как расширенные алгоритмы обеспечили возможность
+нахождения дополнительных параметров.
+
+\section{Список
+литературы}\label{ux441ux43fux438ux441ux43eux43a-ux43bux438ux442ux435ux440ux430ux442ux443ux440ux44b}
+
+\end{document}
