@@ -1,0 +1,127 @@
+<hr />
+<h2 id="front-matter">Front matter</h2>
+<p>title: “Отчет по Лабораторной работе №3 по предмету Математические
+основы защиты информации и кибер безопасности” author: “Лобов Михаил
+Сергеевич”</p>
+<h2 id="generic-otions">Generic otions</h2>
+<p>lang: ru-RU toc-title: “Содержание”</p>
+<h2 id="bibliography">Bibliography</h2>
+<p>bibliography: bib/cite.bib csl:
+pandoc/csl/gost-r-7-0-5-2008-numeric.csl</p>
+<h2 id="pdf-output-format">Pdf output format</h2>
+toc: true # Table of contents toc-depth: 2 lof: true # List of figures
+lot: true # List of tables fontsize: 12pt linestretch: 1.5 papersize: a4
+documentclass: scrreprt ## I18n polyglossia polyglossia-lang: name:
+russian options: - spelling=modern - babelshorthands=true
+polyglossia-otherlangs: name: english ## I18n babel babel-lang: russian
+babel-otherlangs: english ## Fonts mainfont: IBM Plex Serif romanfont:
+IBM Plex Serif sansfont: IBM Plex Sans monofont: IBM Plex Mono mathfont:
+STIX Two Math mainfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
+romanfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
+sansfontoptions:
+Ligatures=Common,Ligatures=TeX,Scale=MatchLowercase,Scale=0.94
+monofontoptions: Scale=MatchLowercase,Scale=0.94,FakeStretch=0.9
+mathfontoptions: ## Biblatex biblatex: true biblio-style: “gost-numeric”
+biblatexoptions: - parentracker=true - backend=biber - hyperref=auto -
+language=auto - autolang=other* - citestyle=gost-numeric ##
+Pandoc-crossref LaTeX customization figureTitle: “Рис.” tableTitle:
+“Таблица” listingTitle: “Листинг” lofTitle: “Список иллюстраций”
+lotTitle: “Список таблиц” lolTitle: “Листинги” ## Misc options indent:
+true header-includes: -
+<ul>
+<li><h1 id="keep-figures-where-there-are-in-the-text">keep figures where
+there are in the text</h1>
+<ul>
+<li><h2 id="keep-figures-where-there-are-in-the-text-1"> # keep figures
+where there are in the text</h2></li>
+</ul></li>
+</ul>
+<h1 id="цель-работы">Цель работы</h1>
+<p>Изучить алгоритм шифрования граммированием конечной гаммой и
+реализовать его программно на языке Julia.</p>
+<h1 id="задание">Задание</h1>
+<ol type="1">
+<li>Сгенерировать случайную двоичную последовательность, которая будет
+использоваться в качестве шифрования</li>
+<li>Выполнить сложение индексов букв шифруемой строки и ключа для
+получения зашифрованного сообщения</li>
+</ol>
+<h1 id="теоретическое-введение">Теоретическое введение</h1>
+<p>Алгоритм шифрования гаммированием является одним из наиболее простых
+и эффективных методов симметричного шифрования. Его суть заключается в
+том, что исходное сообщение преобразуется путем побитовой операции
+исключающего ИЛИ (XOR) с ключом, который представляет собой
+псевдослучайную двоичную последовательность.</p>
+<h2 id="генерация-ключа">Генерация ключа</h2>
+<p>Ключем является последовательность длинной, равной длинне
+сообщения.</p>
+<p>[ k = k_1,k_2…k_m ]</p>
+<p>(k_i ) - биты ключа, <strong>m</strong> - длинна ключа. Ключ
+генерируется случайно.</p>
+<h2 id="непосредственно-шифрование">Непосредственно шифрование</h2>
+<p>Исходное сообщение также представляется в виде двоичной
+последовательности:</p>
+<p>[ p = p_1,p_2,…,p_m ]</p>
+<p>где ( p_i ) — биты исходного сообщения. Шифрование выполняется по
+следующей формуле:</p>
+<p>[ c_i = p_i k_i, i = 1, 2, …, m, ]</p>
+<p>где ( c_i ) — биты зашифрованного сообщения.</p>
+<h1 id="выполнение-лабораторной-работы">Выполнение лабораторной
+работы</h1>
+<h2 id="написаны-программы-на-языке-julia.">Написаны программы на языке
+Julia.</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">encrypt</span>(plaintext<span class="op">::</span><span class="dt">String</span>, key<span class="op">::</span><span class="dt">String</span>)    </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    plaintext <span class="op">=</span> <span class="fu">filter</span>(c <span class="op">-&gt;</span> c <span class="kw">in</span> russian_letters, <span class="fu">uppercase</span>(plaintext))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    key <span class="op">=</span> <span class="fu">filter</span>(c <span class="op">-&gt;</span> c <span class="kw">in</span> russian_letters, <span class="fu">uppercase</span>(key))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    plaintext_nums <span class="op">=</span> [letter_to_num[c] for c <span class="kw">in</span> plaintext] </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    key_nums <span class="op">=</span> [letter_to_num[c] for c <span class="kw">in</span> key] </span></code></pre></div>
+<ol type="1">
+<li>Убираем не буквы, делаем буквы большими</li>
+<li>Сопоставляем буквам сообщения число по алфавиту</li>
+<li>Сопоставляем буквам ключа число по алфавиту</li>
+</ol>
+<h2 id="непосредственно-шифрование-1">Непосредственно шифрование</h2>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> <span class="fu">length</span>(plaintext_nums)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    key_nums_extended <span class="op">=</span> [key_nums[(i<span class="op">-</span><span class="fl">1</span>) <span class="op">%</span> <span class="fu">length</span>(key_nums) <span class="op">+</span> <span class="fl">1</span>] for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>m]  </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    cipher_nums <span class="op">=</span> [(plaintext_nums[i] <span class="op">+</span> key_nums_extended[i]) <span class="op">%</span> <span class="fl">32</span> for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>m] </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    cipher_nums <span class="op">=</span> [num <span class="op">==</span> <span class="fl">0</span> ? <span class="fl">32</span> <span class="op">:</span> num for num <span class="kw">in</span> cipher_nums]                   </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    cipher_text <span class="op">=</span> [num_to_letter[num] for num <span class="kw">in</span> cipher_nums] </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">join</span>(cipher_text)                                  </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
+<ol type="1">
+<li>Делаем длинну ключа и строки одинаковой</li>
+<li>Суммируем номера букв сообщения и ключа, затем делим с остатком</li>
+<li>В зависимости от нового индекса получаем новые буквы сообщения</li>
+</ol>
+<h2 id="пример">Пример</h2>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plaintext <span class="op">=</span> <span class="st">&quot;ПРИКАЗ&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>key <span class="op">=</span> <span class="st">&quot;ГАММА&quot;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ciphertext <span class="op">=</span> <span class="fu">encrypt</span>(plaintext, key)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">&quot;Сообщение: </span><span class="sc">$</span>plaintext<span class="st">&quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">&quot;Ключ: </span><span class="sc">$</span>key<span class="st">&quot;</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">&quot;Зашифрованное Сообщение: </span><span class="sc">$</span>ciphertext<span class="st">&quot;</span>)</span></code></pre></div>
+<pre class="terminal"><code>Сообщение: ПРИКАЗ
+Ключ: ГАММА
+Зашифрованное Сообщение: УСХЧБЛ</code></pre>
+<h1 id="выводы">Выводы</h1>
+<p>В ходе выполнения лабораторной работы №3 был реализован алгоритм
+шифрования граммированием конечной гаммой на языке Julia. Программа
+успешно выполняет шифрование сообщения, как видно из примера.</p>
+<h1 class="unnumbered" id="список-литературы">Список литературы</h1>
+<div
+class="{#[Лабораторная_работа_3](https://esystem.rudn.ru/mod/folder/view.php?id=1150970)}">
+<p>В ходе выполнения лабораторной работы был реализован алгоритм
+шифрования гаммированием конечной гаммой на языке Julia. Программа
+успешно выполняет шифрование и расшифровку сообщений, используя
+побитовую операцию XOR и случайно сгенерированный ключ. Получены
+практические навыки работы с двоичными данными и реализации
+криптографических алгоритмов на языке программирования Julia.</p>
+</div>
