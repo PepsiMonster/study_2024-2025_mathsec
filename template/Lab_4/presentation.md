@@ -188,7 +188,29 @@ $$
 
 
 ---
-## Примеры кода 
+![bg left:100%](./pictures/screenshot1.png)
+
+---
+![bg left:100%](./pictures/screenshot2.png)
+
+---
+![bg left:100%](./pictures/screenshot3.png)
+
+---
+![bg left:100%](./pictures/screenshot4.png)
+
+---
+![bg left:100%](./pictures/screenshot5.png)
+
+---
+![bg left:100%](./pictures/screenshot6.png)
+
+---
+![bg left:100%](./pictures/screenshot7.png)
+
+---
+![bg left:100%](./pictures/screenshot8.png)
+
 ---
 # Заключение
 
